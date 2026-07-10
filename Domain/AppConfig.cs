@@ -29,7 +29,7 @@ namespace Adminbot.Domain
         public int BroadcastDelayMs { get; set; } = 250;
         public int BroadcastMaxRetryCount { get; set; } = 3;
         public int BroadcastQueueCapacity { get; set; } = 10000;
-        public bool HttpsEnabled { get; set; } = true;
+        public bool HttpsEnabled { get; set; } = false;
         public int HttpsPort { get; set; } = 443;
         public int HttpPort { get; set; } = 80;
         public string HttpsCertificatePath { get; set; } = "./Data/tofanservice.ir cf15years/cert.crt";
