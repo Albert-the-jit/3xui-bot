@@ -1,5 +1,5 @@
 # Stage 1: Build environment
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
 WORKDIR /App
 
 # Copy everything
@@ -12,7 +12,7 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o out
 
 # Stage 2: Runtime image
-FROM mcr.microsoft.com/dotnet/sdk:7.0
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /App
 
 # Copy the published output from the build stage
