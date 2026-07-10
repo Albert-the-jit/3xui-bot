@@ -18,8 +18,11 @@ WORKDIR /App
 # Copy the published output from the build stage
 COPY --from=build-env /App/out .
 
-# Add a volume for the SQLite database file
+VOLUME /App/AppData/configuration.json
+VOLUME /App/Data/xui-v3-service-plans.json
 VOLUME /App/users.db
+VOLUME /App/credentials.db
+
 
 # Set the entry point
 ENTRYPOINT ["dotnet", "Adminbot.dll"]
